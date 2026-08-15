@@ -1,0 +1,18 @@
+{
+  "id": "no_bike_music",
+  "name": "No Bike Music",
+  "author": "adhdandy",
+  "github": "your_name/gen1recomp-no-bike-music",
+  "version": "1.0.0",
+  "api": 2,
+  "entry": "main.lua",
+  "profile": "content",
+  "category": "QOL",
+  "game_version": ">=0.1.90",
+  "priority": 0,
+  "dependencies": [],
+  "optional_dependencies": [],
+  "conflicts": [],
+  "permissions": [],
+  "description": "Prevents the bicycle from interrupting the map music. The current map theme keeps playing uninterrupted when mounting the bike."
+}
