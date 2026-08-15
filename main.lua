@@ -1,8 +1,25 @@
--- disables the bike music and keeps the regular overworld music playing
 return function(mod)
+  mod.hooks:wrap("ui.options.rows", function(next, game, rows)
+    local out = next(game, rows)
+    if type(out) ~= "table" then return out end
+    out[#out + 1] = {
+      id = "no_bike_music",
+      label = "BIKE MUSIC",
+      value = function()
+        return mod.save:get("suppress", true) and "OFF" or "ON"
+      end,
+      activate = function()
+        mod.save:set("suppress", not mod.save:get("suppress", true))
+      end,
+    }
+    return out
+  end)
+
   mod.hooks:wrap("music.select", function(next, song, ctx)
     if ctx.onBike and not ctx.battleKind and not ctx.surfing then
-      return ctx.mapSong
+      if mod.save:get("suppress", true) then
+        return ctx.mapSong
+      end
     end
     return next(song, ctx)
   end)
