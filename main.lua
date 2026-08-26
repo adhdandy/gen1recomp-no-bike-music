@@ -16,7 +16,7 @@ return function(mod)
   end)
 
   mod.hooks:wrap("music.select", function(next, song, ctx)
-    if ctx.onBike and not ctx.battleKind and not ctx.surfing then
+    if song == "Music_BikeRiding" then
       if mod.save:get("suppress", true) then
         return ctx.mapSong
       end
