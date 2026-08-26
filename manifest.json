@@ -3,7 +3,7 @@
   "name": "No Bike Music",
   "author": "adhdandy",
   "github": "adhdandy/gen1recomp-no-bike-music",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
