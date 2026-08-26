@@ -16,7 +16,7 @@ return function(mod)
   end)
 
   mod.hooks:wrap("music.select", function(next, song, ctx)
-    if song == "Music_BikeRiding" then
+    if song == "Music_BikeRiding" and ctx.mapId ~= "ROUTE_17" then
       if mod.save:get("suppress", true) then
         return ctx.mapSong
       end
